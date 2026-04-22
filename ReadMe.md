@@ -9,3 +9,7 @@ Sample Text
 ## Technologies Used
 
 Sample Text
+
+## Deployed Site
+
+Check Out [this site](https://luke-bowman-dev.github.io/ai-se_project_flashcards/) on GitHub Pages.
