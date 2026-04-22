@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Luke Bowman" />
+    <meta
+      name="description"
+      content="A flashcard app that will help users memorize concepts from subjects they are trying to learn"
+    />
+    <meta
+      name="keywords"
+      content="study-aids, flashcards, learning materials, educational app"
+    />
+    <title>Flashcard App</title>
+    <link rel="icon" href="favicon.ico" />
+    <link href="./assets/vendor/normalize.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__link" href="#home">Flash Cards</a>
+      </h1>
+      <nav class="nav">
+        <ul class="nav__links">
+          <li class="nav__link"><a class="link" href="#home">My Decks</a></li>
+          <li class="nav__link"><a class="link" href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page__main-content">
+      <section id="home" class="decks">
+        <h2 class="decks__title">My Decks</h2>
+        <ul class="decks__list"></ul>
+        <button class="decks__new-deck-button" type="button">+ New Deck</button>
+      </section>
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__status-code">404</h2>
+        <p class="not-found__text">Sorry, nothing found!</p>
+      </section>
+      <section class="carousel" id="carousel">
+        <h2 class="carousel__title">Basic HTML Tags &middot; 1/10</h2>
+        <div class="carousel__left-card-right">
+          <button
+            class="carousel__btn carousel__btn_type_left"
+            type="button"
+            aria-label="Previous card"
+            disabled
+          ></button>
+          <div class="carousel__card">
+            <p class="carousel__card-text">&lt;body&gt;&lt;/body&gt;</p>
+          </div>
+          <button
+            class="carousel__btn carousel__btn_type_right"
+            type="button"
+            aria-label="Next card"
+          ></button>
+        </div>
+        <div class="carousel__flip">
+          <button
+            class="carousel__btn carousel__btn_type_flip"
+            type="button"
+            aria-label="Flip card"
+          ></button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">@2026 Luke Bowman</p>
+    </footer>
+    <template id="deck-template">
+      <li class="deck">
+        <a class="deck__link" href="#"></a>
+        <div class="column-1">
+          <h2 class="deck__title"></h2>
+          <p class="deck__count"></p>
+        </div>
+        <div class="column-2">
+          <button
+            class="deck__delete-button"
+            type="button"
+            aria-label="Delete deck"
+          >
+            <img src="./assets/images/delete.svg" alt="" />
+          </button>
+        </div>
+      </li>
+    </template>
+    <script src="./assets/js/index.js" type="module"></script>
+  </body>
+</html>
