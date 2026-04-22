@@ -6,6 +6,6 @@ This repository is a project for the Software Developer Course at TripleTen. It 
 
 Sample Text
 
-##Technologies Used
+## Technologies Used
 
 Sample Text
