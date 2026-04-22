@@ -4,11 +4,11 @@ This repository is a project for the Software Developer Course at TripleTen. It 
 
 ## Features
 
-Sample Text
+Decks of Flashcards that contain cards for different subjects. the ability to move through each card and flip to see the answers.
 
 ## Technologies Used
 
-Sample Text
+HTML, CSS, and JavaScript in VS Code
 
 ## Deployed Site
 
