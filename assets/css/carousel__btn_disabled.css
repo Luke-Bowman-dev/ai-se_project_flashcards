@@ -1,0 +1,17 @@
+.carousel__btn_disabled::before {
+  opacity: 20%;
+}
+
+.carousel__btn_disabled:hover::before {
+  opacity: 20%;
+  cursor: default;
+}
+
+.carousel__btn:disabled {
+  opacity: 20%;
+}
+
+.carousel__btn:disabled:hover {
+  cursor: default;
+  opacity: 20%;
+}

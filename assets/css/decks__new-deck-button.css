@@ -1,0 +1,19 @@
+.decks__new-deck-button {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #1a1a1a80;
+  background-color: #d9d9d9;
+  border-color: transparent;
+  max-width: 325px;
+  width: 100%;
+  height: 205px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+}
+.decks__new-deck-button:hover {
+  background-color: #c5c5c5;
+  color: #1a1a1a;
+  cursor: pointer;
+}

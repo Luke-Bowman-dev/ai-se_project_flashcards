@@ -1,0 +1,13 @@
+.deck__delete-button {
+  background-color: transparent;
+  border-color: transparent;
+  opacity: 50%;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+.deck__delete-button:hover {
+  cursor: pointer;
+  opacity: 100%;
+}

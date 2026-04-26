@@ -1,0 +1,10 @@
+.carousel__card {
+  background-color: #64d583;
+  max-width: 440px;
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

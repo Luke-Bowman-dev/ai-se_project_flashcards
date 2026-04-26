@@ -1,0 +1,12 @@
+.deck {
+  max-width: 325px;
+  width: 100%;
+  height: 205px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #64d583;
+  position: relative;
+}

@@ -1,0 +1,9 @@
+.carousel__title {
+  font-weight: 500;
+  font-size: 14px;
+  color: #1a1a1a80;
+  margin-bottom: 32px;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+}
