@@ -1,4 +1,4 @@
-.deck__delete-button {
+.card__delete-button {
   background-color: transparent;
   border-color: transparent;
   opacity: 50%;
@@ -7,7 +7,7 @@
   z-index: 2;
 }
 
-.deck__delete-button:hover {
+.card__delete-button:hover {
   cursor: pointer;
   opacity: 100%;
 }

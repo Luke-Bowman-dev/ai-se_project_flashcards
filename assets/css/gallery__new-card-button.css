@@ -1,4 +1,4 @@
-.decks__new-deck-button {
+.gallery__new-card-button {
   font-weight: 700;
   font-size: 24px;
   line-height: 1.2;
@@ -12,7 +12,7 @@
   padding: 20px;
   display: flex;
 }
-.decks__new-deck-button:hover {
+.gallery__new-card-button:hover {
   background-color: #c5c5c5;
   color: #1a1a1a;
   cursor: pointer;

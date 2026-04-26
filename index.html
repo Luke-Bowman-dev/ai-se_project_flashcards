@@ -35,10 +35,12 @@
       </nav>
     </header>
     <main class="page__main-content">
-      <section id="home" class="decks">
-        <h2 class="decks__title">My Decks</h2>
-        <ul class="decks__list"></ul>
-        <button class="decks__new-deck-button" type="button">+ New Deck</button>
+      <section id="home" class="gallery">
+        <h2 class="gallery__title">My Decks</h2>
+        <ul class="gallery__list"></ul>
+        <button class="gallery__new-card-button" type="button">
+          + New Deck
+        </button>
       </section>
       <section id="not-found" class="not-found">
         <h2 class="not-found__status-code">404</h2>
@@ -75,15 +77,15 @@
       <p class="footer__text">@2026 Luke Bowman</p>
     </footer>
     <template id="deck-template">
-      <li class="deck">
-        <a class="deck__link" href="#"></a>
+      <li class="card">
+        <a class="card__link" href="#"></a>
         <div class="column-1">
-          <h2 class="deck__title"></h2>
-          <p class="deck__count"></p>
+          <h2 class="card__title"></h2>
+          <p class="card__count"></p>
         </div>
         <div class="column-2">
           <button
-            class="deck__delete-button"
+            class="card__delete-button"
             type="button"
             aria-label="Delete deck"
           >
