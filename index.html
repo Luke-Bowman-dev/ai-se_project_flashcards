@@ -42,6 +42,18 @@
           + New Deck
         </button>
       </section>
+      <section id="deck-view" class="gallery">
+        <div>
+          <h2 class="gallery__title"></h2>
+          <button class="gallery__practice-button" type="button">
+            Practice
+          </button>
+        </div>
+        <ul class="gallery__list"></ul>
+        <button class="gallery__new-card-button" type="button">
+          + New Card
+        </button>
+      </section>
       <section id="not-found" class="not-found">
         <h2 class="not-found__status-code">404</h2>
         <p class="not-found__text">Sorry, nothing found!</p>
@@ -88,6 +100,23 @@
             class="card__delete-button"
             type="button"
             aria-label="Delete deck"
+          >
+            <img src="./assets/images/delete.svg" alt="" />
+          </button>
+        </div>
+      </li>
+    </template>
+    <template id="card-template">
+      <li class="card">
+        <div class="column-1">
+          <h2 class="card__title"></h2>
+          <button aria-label="Flip card"></button>
+        </div>
+        <div class="column-2">
+          <button
+            class="card__delete-button"
+            type="button"
+            aria-label="Delete card"
           >
             <img src="./assets/images/delete.svg" alt="" />
           </button>
