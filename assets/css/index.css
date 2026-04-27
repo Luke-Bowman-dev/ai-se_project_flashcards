@@ -9,6 +9,8 @@
 @import url(page__main-content.css);
 @import url(page__main-content_carousel.css);
 @import url(gallery.css);
+@import url(gallery__header.css);
+@import url(gallery__practice-button.css);
 @import url(gallery__title.css);
 @import url(gallery__list.css);
 @import url(card.css);
@@ -37,12 +39,14 @@
 @import url(carousel__card_color_blue.css);
 @import url(carousel__card_color_green.css);
 @import url(carousel__card_color_orange.css);
-@import url(carousel__card_color_pink);
+@import url(carousel__card_color_pink.css);
 @import url(carousel__card_color_purple.css);
 @import url(carousel__card_color_yellow.css);
 @import url(card_color_green.css);
+@import url(card_color_yellow.css);
 @import url(card_color_blue.css);
 @import url(card_color_orange.css);
 @import url(card_color_pink.css);
 @import url(card_color_purple.css);
 @import url(card_color_purple.css);
+@import url(card__btn_type_flip.css);

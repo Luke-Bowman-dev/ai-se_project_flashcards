@@ -11,6 +11,7 @@ function renderCarouselView(deck) {
   const flipBtn = carouselEl.querySelector(".carousel__flip");
   removeColorClasses(carouselCardEl);
   const color = hexToString(deck.color);
+  removeColorClasses(carouselCardEl);
   carouselCardEl.classList.add(`carousel__card_color_${color}`);
   function disableButton(buttonEl) {
     buttonEl.classList.add("carousel__btn_disabled");

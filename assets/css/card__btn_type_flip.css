@@ -1,0 +1,13 @@
+.card__btn_type_flip {
+  background-color: transparent;
+  border-color: transparent;
+  opacity: 50%;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+.card__btn_type_flip:hover {
+  cursor: pointer;
+  opacity: 100%;
+}
