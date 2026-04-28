@@ -12,3 +12,8 @@
   box-sizing: border-box;
   padding: 20px 40px 32px;
 }
+@media (max-width: 800px) {
+  .page {
+    padding: 22px 20px 20px;
+  }
+}

@@ -1,6 +1,11 @@
 .gallery__title {
   font-weight: 700;
   font-size: 40px;
-  margin-bottom: 40px;
   flex: 1 0 100%;
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .gallery__title {
+    font-size: 32px;
+  }
 }

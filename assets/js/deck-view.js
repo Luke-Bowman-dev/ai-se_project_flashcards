@@ -1,18 +1,22 @@
 import { decks, getDeckByID } from "./decks.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colorMap.js";
 import { currentDeck } from "./index.js";
+import { modal } from "./modal.js";
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const pageEl = document.querySelector(".page__main-content");
-function renderDeckView(deckId) {
+let currentCardEl = null;
+const confirmationModalEl = document.querySelector("#confirmation-modal");
+function showView(section, display) {
   homeSection.style.display = "none";
-  deckViewSection.style.display = "flex";
+  deckViewSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
-  pageEl.classList.remove("page__main-content_carousel");
-
+  section.style.display = display;
+}
+function renderDeckView(deckId) {
   if (!currentDeck) {
     renderNotFoundView();
     return;
@@ -23,7 +27,8 @@ function renderDeckView(deckId) {
   const cardTemplateEl = document.querySelector("#card-template");
   const cardContainerEl = deckViewSection.querySelector(".gallery__list");
   cardContainerEl.innerHTML = "";
-
+  const pageGradientEl = document.querySelector(".page");
+  pageGradientEl.classList.remove("page_no-mobile-bar");
   function createCardEl(item) {
     const cardEl = cardTemplateEl.content
       .querySelector(".card")
@@ -43,7 +48,8 @@ function renderDeckView(deckId) {
     });
     const deleteBtn = cardEl.querySelector(".card__delete-button");
     deleteBtn.addEventListener("click", () => {
-      cardEl.remove();
+      confirmationModalEl.classList.add("modal_visible");
+      modal(cardEl);
     });
     return cardEl;
   }
@@ -53,4 +59,5 @@ function renderDeckView(deckId) {
   }
   currentDeck.cards.forEach(renderCardEl);
 }
+
 export { renderDeckView };

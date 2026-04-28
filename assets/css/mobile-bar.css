@@ -1,0 +1,59 @@
+@media (max-width: 800px) {
+  .gallery__new-card-button,
+  .gallery__practice-button {
+    position: fixed;
+    bottom: 75px;
+    font-weight: 500;
+    padding: 12px 16px 14px;
+    margin: 0 auto;
+    z-index: 3;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 100%;
+    border-radius: 8px;
+    aspect-ratio: auto;
+    height: auto;
+    justify-content: center;
+    max-width: 353px;
+    height: 44px;
+  }
+  .gallery__new-card-button {
+    width: calc(100% - 40px);
+
+    left: 0;
+    right: 0;
+  }
+  .gallery__practice-button {
+    right: 21px;
+    width: calc(50% - 6px - 21px);
+  }
+
+  .gallery__new-card-btn_location_deck-view {
+    left: 21px;
+    right: unset;
+    width: calc(50% - 6px - 21px);
+    background: #cccccccc;
+    color: #1a1a1a80;
+  }
+
+  .page::after {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(transparent, #ececec 35%);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .page_no-mobile-bar::after {
+    display: none;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 20px;
+  }
+}

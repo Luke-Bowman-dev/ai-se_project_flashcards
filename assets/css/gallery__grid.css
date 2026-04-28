@@ -1,0 +1,13 @@
+.gallery__grid {
+  display: contents;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: 353px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}

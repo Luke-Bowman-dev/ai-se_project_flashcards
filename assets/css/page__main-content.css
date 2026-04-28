@@ -3,3 +3,14 @@
   margin-bottom: 138px;
   flex-grow: 1;
 }
+@media (max-width: 800px) {
+  .page__main-content {
+    margin-top: 42px;
+    margin-bottom: 147px;
+  }
+}
+@media (max-width: 800px) {
+  .page__main-content {
+    align-content: center;
+  }
+}

@@ -22,7 +22,7 @@
 @import url(column-2.css);
 @import url(carousel.css);
 @import url(carousel__title.css);
-@import url(carousel__left-card-right.css);
+@import url(carousel__grid.css);
 @import url(carousel__card.css);
 @import url(carousel__card_color_white.css);
 @import url(carousel__card-text.css);
@@ -50,3 +50,6 @@
 @import url(card_color_purple.css);
 @import url(card_color_purple.css);
 @import url(card__btn_type_flip.css);
+@import url(gallery__grid.css);
+@import url(mobile-bar.css);
+@import url(modal.css);

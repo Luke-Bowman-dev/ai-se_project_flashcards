@@ -1,3 +1,6 @@
+.carousel__btn_type_flip {
+  grid-area: flip-btn;
+}
 .carousel__btn_type_flip::before {
   content: "";
   display: block;

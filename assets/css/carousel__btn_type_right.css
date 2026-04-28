@@ -1,3 +1,7 @@
+.carousel__btn_type_right {
+  grid-area: right-btn;
+  justify-self: start;
+}
 .carousel__btn_type_right::before {
   content: "";
   display: block;
@@ -7,4 +11,9 @@
   background-position: center;
   background-image: url("../images/right.svg");
   opacity: 50%;
+}
+@media (max-width: 800px) {
+  .carousel__btn_type_right {
+    justify-self: end;
+  }
 }

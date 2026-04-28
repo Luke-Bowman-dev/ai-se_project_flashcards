@@ -17,3 +17,8 @@
   color: #1a1a1a;
   cursor: pointer;
 }
+@media (max-width: 800px) {
+  .gallery__new-card-button {
+    max-width: 353px;
+  }
+}

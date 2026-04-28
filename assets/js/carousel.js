@@ -8,7 +8,9 @@ function renderCarouselView(deck) {
   const carouselTitleEl = carouselEl.querySelector(".carousel__title");
   const carouselCardEl = carouselEl.querySelector(".carousel__card");
   const carouselCardTextEl = carouselEl.querySelector(".carousel__card-text");
-  const flipBtn = carouselEl.querySelector(".carousel__flip");
+  const flipBtn = carouselEl.querySelector(".carousel__btn_type_flip");
+  const pageGradientEl = document.querySelector(".page");
+  pageGradientEl.classList.add("page_no-mobile-bar");
   removeColorClasses(carouselCardEl);
   const color = hexToString(deck.color);
   removeColorClasses(carouselCardEl);
