@@ -53,3 +53,8 @@
 @import url(gallery__grid.css);
 @import url(mobile-bar.css);
 @import url(modal.css);
+@import url(new-deck-view__form.css);
+@import url(new-deck-view__color-input.css);
+@import url(new-deck-view.css);
+@import url(new-deck-view__form__input.css);
+@import url(new-deck-view__form__submit-btn.css);

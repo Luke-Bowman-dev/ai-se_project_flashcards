@@ -1,0 +1,14 @@
+.new-deck-view__form__input[type="text"] {
+  appearance: none;
+  outline: none;
+  font: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #1a1a1a;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.new-deck-view__form__input[type="text"]:focus {
+  border-color: #4a90e2;
+}

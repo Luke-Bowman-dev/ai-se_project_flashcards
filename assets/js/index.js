@@ -7,6 +7,7 @@ const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
+const newDeckViewSection = document.querySelector("#new-deck-view");
 const pageEl = document.querySelector(".page__main-content");
 let currentDeck = null;
 let currentCardEl = null;
@@ -16,6 +17,7 @@ function showView(section, display) {
   deckViewSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
+  newDeckViewSection.style.display = "none";
   section.style.display = display;
 }
 function renderHomeView() {
@@ -77,6 +79,9 @@ function router() {
     pageEl.classList.remove("page__main-content_carousel");
     currentDeck = getDeckByID(deckId);
     renderDeckView(deckId);
+  } else if (hash === "new-deck-view") {
+    showView(newDeckViewSection, "flex");
+    pageEl.classList.remove("page__main-content_carousel");
   } else {
     renderNotFoundView();
   }
@@ -85,6 +90,13 @@ const practiceButtonEl = document.querySelector(".gallery__practice-button");
 practiceButtonEl.addEventListener("click", () => {
   let currentDeckId = currentDeck.id;
   window.location.hash = `#carousel/${currentDeckId}`;
+});
+
+const newDeckViewButtonEl = document.querySelector(
+  "#home .gallery__new-card-button",
+);
+newDeckViewButtonEl.addEventListener("click", () => {
+  window.location.hash = `#new-deck-view`;
 });
 
 window.addEventListener("DOMContentLoaded", router);
