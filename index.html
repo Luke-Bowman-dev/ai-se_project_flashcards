@@ -158,17 +158,21 @@
               />
             </label>
           </fieldset>
-          <label for="textinput" class="new-deck-view__form__label">
-            Placeholder
-            <input
-              id="textinput"
-              type="text"
+          <label for="deckJSON" class="new-deck-view__form__label">
+            Deck JSON
+            <textarea
+              id="deckJSON"
               class="new-deck-view__form__input"
-              name=""
-              placeholder="Placeholder"
-            />
+              name="deckName"
+              placeholder="Deck JSON"
+            >
+            </textarea>
           </label>
-          <button class="new-deck-view__form__submit-btn" disabled>
+          <button
+            class="new-deck-view__form__submit-btn"
+            type="submit"
+            disabled
+          >
             Submit
           </button>
         </form>

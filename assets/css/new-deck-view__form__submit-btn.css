@@ -16,3 +16,12 @@
   color: #1a1a1a;
   cursor: pointer;
 }
+.new-deck-view__form__submit-btn:disabled {
+  opacity: 20%;
+}
+.new-deck-view__form__submit-btn:disabled:hover {
+  cursor: default;
+  opacity: 20%;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}

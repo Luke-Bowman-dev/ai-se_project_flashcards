@@ -3,6 +3,12 @@ import { stringToHex, hexToString, removeColorClasses } from "./colorMap.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
 import { modal } from "./modal.js";
+import {
+  disableSubmitBtn,
+  newDeckForm,
+  newDeckSubmitBtn,
+  newDeckTextarea,
+} from "./new-deck-view.js";
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
@@ -82,6 +88,7 @@ function router() {
   } else if (hash === "new-deck-view") {
     showView(newDeckViewSection, "flex");
     pageEl.classList.remove("page__main-content_carousel");
+    disableSubmitBtn(newDeckSubmitBtn);
   } else {
     renderNotFoundView();
   }

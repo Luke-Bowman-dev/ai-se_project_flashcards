@@ -1,4 +1,4 @@
-.new-deck-view__form__input[type="text"] {
+.new-deck-view__form__input {
   appearance: none;
   outline: none;
   font: inherit;
@@ -7,8 +7,10 @@
   border: 1px solid #1a1a1a;
   padding: 8px 12px;
   border-radius: 4px;
+  resize: none;
+  display: block;
 }
 
-.new-deck-view__form__input[type="text"]:focus {
+.new-deck-view__form__input:focus {
   border-color: #4a90e2;
 }
