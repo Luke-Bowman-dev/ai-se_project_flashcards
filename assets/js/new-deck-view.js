@@ -1,6 +1,7 @@
 import { decks } from "./decks.js";
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
-
+const errorModalEl = document.querySelector("#error-modal");
+const errorModalMsg = errorModalEl.querySelector(".error-modal__error");
 /**
  * Converts a string to a URL-safe slug: lowercase with any run of
  * non-alphanumeric characters replaced by a single hyphen, and no leading or
@@ -41,11 +42,54 @@ const newDeckTextarea = document.querySelector(".new-deck-view_form_input");
 function disableSubmitBtn(btn) {
   btn.disabled = false;
 }
+
+function showError(message) {
+  errorModalMsg.textContent = message;
+  errorModalEl.classList.add("modal_visible");
+}
+
+function validateName(name) {
+  if (typeof name != "string" || name.length < 2 || name.length > 80) {
+    return null;
+  }
+  return name;
+}
+
+function parseJSON(jsonString) {
+  try {
+    return JSON.parse(jsonString);
+  } catch (error) {
+    return null;
+  }
+}
+
 newDeckForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const formData = new FormData(e.target);
   const values = Object.fromEntries(formData);
-  const jsonData = JSON.parse(values.deckName);
+
+  const jsonData = parseJSON(values.deckName);
+  if (jsonData === null) {
+    showError("JSON parsing failed.");
+    return;
+  }
+  const name = validateName(jsonData.name);
+  if (name === null) {
+    showError("Name must be a string between 2 and 80 characters.");
+    return;
+  }
+  if (!Array.isArray(jsonData.cards)) {
+    showError("Cards must be an array.");
+    return;
+  }
+  if (typeof jsonData.color !== "string") {
+    showError("JSON object's color must be a string.");
+    return;
+  }
+  if (normalizeColor(values.color) !== normalizeColor(jsonData.color)) {
+    showError("JSON object's color must match selected color.");
+    return;
+  }
   const newDeck = {
     id: `${slugify(jsonData.name)}-${Date.now()}`,
     color: normalizeColor(values.color),

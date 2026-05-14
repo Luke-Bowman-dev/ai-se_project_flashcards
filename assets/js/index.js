@@ -18,6 +18,13 @@ const pageEl = document.querySelector(".page__main-content");
 let currentDeck = null;
 let currentCardEl = null;
 const confirmationModalEl = document.querySelector("#confirmation-modal");
+const errorModalEl = document.querySelector("#error-modal");
+const errorModalDismissBtn = errorModalEl.querySelector(".error-modal__close");
+
+errorModalDismissBtn.addEventListener("click", () => {
+  errorModalEl.classList.remove("modal_visible");
+});
+
 function showView(section, display) {
   homeSection.style.display = "none";
   deckViewSection.style.display = "none";
