@@ -82,14 +82,17 @@ newDeckForm.addEventListener("submit", function (e) {
     showError("Cards must be an array.");
     return;
   }
-  if (typeof jsonData.color !== "string") {
-    showError("JSON object's color must be a string.");
-    return;
+  if (Object.hasOwn(jsonData, "color")) {
+    if (typeof jsonData.color !== "string") {
+      showError("JSON object's color must be a string.");
+      return;
+    }
+    if (normalizeColor(values.color) !== normalizeColor(jsonData.color)) {
+      showError("JSON object's color must match selected color.");
+      return;
+    }
   }
-  if (normalizeColor(values.color) !== normalizeColor(jsonData.color)) {
-    showError("JSON object's color must match selected color.");
-    return;
-  }
+
   const newDeck = {
     id: `${slugify(jsonData.name)}-${Date.now()}`,
     color: normalizeColor(values.color),
