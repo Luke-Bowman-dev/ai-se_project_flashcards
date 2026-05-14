@@ -82,7 +82,7 @@ newDeckForm.addEventListener("submit", function (e) {
     showError("Cards must be an array.");
     return;
   }
-  if (Object.hasOwn(jsonData, "color")) {
+  if (jsonData.color !== undefined) {
     if (typeof jsonData.color !== "string") {
       showError("JSON object's color must be a string.");
       return;
