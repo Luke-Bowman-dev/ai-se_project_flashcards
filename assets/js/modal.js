@@ -1,5 +1,6 @@
 const confirmationModalEl = document.querySelector("#confirmation-modal");
-function modal(deleteCard) {
+
+function modal() {
   const cancelButtonEl = document.querySelector(".modal__btn_type_cancel");
   const confirmButtonEl = document.querySelector(".modal__btn_type_confirm");
 
@@ -9,7 +10,6 @@ function modal(deleteCard) {
   }
 
   function handleConfirm() {
-    deleteCard.remove(); // <-- always correct reference
     confirmationModalEl.classList.remove("modal_visible");
     cleanup();
   }

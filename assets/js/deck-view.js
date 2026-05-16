@@ -7,7 +7,7 @@ const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const pageEl = document.querySelector(".page__main-content");
-const fetchedDecks = [];
+let fetchedDecks = [];
 let currentCardEl = null;
 const confirmationModalEl = document.querySelector("#confirmation-modal");
 function showView(section, display) {

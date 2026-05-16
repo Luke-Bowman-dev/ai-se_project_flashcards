@@ -1,4 +1,5 @@
 import { decks } from "./decks.js";
+import { addDeck } from "./api.js";
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 const errorModalEl = document.querySelector("#error-modal");
 const errorModalMsg = errorModalEl.querySelector(".error-modal__error");
@@ -10,13 +11,6 @@ const errorModalMsg = errorModalEl.querySelector(".error-modal__error");
  * @param {string} str
  * @returns {string}
  */
-function slugify(str) {
-  return str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
-}
 
 /**
  * Returns a consistent lowercase hex color string with a leading "#".
@@ -65,23 +59,27 @@ function parseJSON(jsonString) {
 
 newDeckForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
   const formData = new FormData(e.target);
   const values = Object.fromEntries(formData);
-
   const jsonData = parseJSON(values.deckName);
+
   if (jsonData === null) {
     showError("JSON parsing failed.");
     return;
   }
+
   const name = validateName(jsonData.name);
   if (name === null) {
     showError("Name must be a string between 2 and 80 characters.");
     return;
   }
+
   if (!Array.isArray(jsonData.cards)) {
     showError("Cards must be an array.");
     return;
   }
+
   if (jsonData.color !== undefined) {
     if (typeof jsonData.color !== "string") {
       showError("JSON object's color must be a string.");
@@ -93,14 +91,21 @@ newDeckForm.addEventListener("submit", function (e) {
     }
   }
 
-  const newDeck = {
-    _id: `${slugify(jsonData.name)}-${Date.now()}`,
-    color: normalizeColor(values.color),
-    cards: jsonData.cards,
+  const color = normalizeColor(values.color);
+
+  addDeck({
     name: jsonData.name,
-  };
-  decks.push(newDeck);
-  window.location.hash = "deck-view/" + newDeck._id;
+    cards: jsonData.cards,
+    color: color,
+  })
+    .then((newDeck) => {
+      decks.push(newDeck);
+
+      window.location.hash = "deck-view/" + newDeck._id;
+    })
+    .catch((err) => {
+      showError("Failed to save the new deck to the server.");
+    });
 });
 
 export {

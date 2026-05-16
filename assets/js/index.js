@@ -10,7 +10,7 @@ import {
   newDeckTextarea,
   showError,
 } from "./new-deck-view.js";
-import { getDecks, deleteDeck } from "./api.js";
+import { getDecks, deleteDeck, addDeck } from "./api.js";
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
@@ -58,7 +58,7 @@ function createDeckEl(item) {
   const deckTitleEl = deckEl.querySelector(".card__title");
   deckTitleEl.textContent = item.name;
   const deckLinkEl = deckEl.querySelector(".card__link");
-  deckLinkEl.href = `#deck-view/${item.id}`;
+  deckLinkEl.href = `#deck-view/${item._id}`;
   const color = hexToString(item.color);
   removeColorClasses(deckEl);
   deckEl.classList.add(`card_color_${color}`);
@@ -66,16 +66,26 @@ function createDeckEl(item) {
   deckCountEl.textContent = `${item.cards.length} cards`;
 
   const deleteBtn = deckEl.querySelector(".card__delete-button");
+
   deleteBtn.addEventListener("click", () => {
     confirmationModalEl.classList.add("modal_visible");
-    modal(deckEl, () => {
-      deleteDeck(item.id)
+    modal();
+    const modalConfirmBtn = confirmationModalEl.querySelector(
+      ".modal__btn_type_confirm",
+    );
+
+    modalConfirmBtn.onclick = () => {
+      deleteDeck(item._id)
         .then(() => {
+          const deckIndex = fetchedDecks.findIndex((d) => d._id === item._id);
+          if (deckIndex !== -1) {
+            fetchedDecks.splice(deckIndex, 1);
+          }
+
           deckEl.remove();
-          confirmationModalEl.classList.remove("modal_visible");
         })
         .catch(showError);
-    });
+    };
   });
 
   return deckEl;
