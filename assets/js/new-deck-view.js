@@ -94,13 +94,19 @@ newDeckForm.addEventListener("submit", function (e) {
   }
 
   const newDeck = {
-    id: `${slugify(jsonData.name)}-${Date.now()}`,
+    _id: `${slugify(jsonData.name)}-${Date.now()}`,
     color: normalizeColor(values.color),
     cards: jsonData.cards,
     name: jsonData.name,
   };
   decks.push(newDeck);
-  window.location.hash = "deck-view/" + newDeck.id;
+  window.location.hash = "deck-view/" + newDeck._id;
 });
 
-export { disableSubmitBtn, newDeckForm, newDeckSubmitBtn, newDeckTextarea };
+export {
+  disableSubmitBtn,
+  newDeckForm,
+  newDeckSubmitBtn,
+  newDeckTextarea,
+  showError,
+};
