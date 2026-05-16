@@ -65,5 +65,50 @@ function addDeck({ name, color, cards }) {
     body: JSON.stringify({ name, color, cards }),
   }).then((res) => processResponse(res));
 }
+/**
+ * Sends a single new flashcard to a specific deck on the server.
+ *
+ * @param {string|number} deckId - The unique ID of the target deck.
+ * @param {Object} cardData - The question and answer for the new card.
+ * @param {string} cardData.question - The question text.
+ * @param {string} cardData.answer - The answer text.
+ * @returns {Promise<any>} A promise that resolves to the newly created card object.
+ */
+function addCard(deckId, { question, answer }) {
+  return fetch(`${baseUrl}/cards/${deckId}`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ question, answer }),
+  }).then((res) => processResponse(res));
+}
 
-export { getDecks, deleteDeck, addDeck };
+/**
+ * Deletes a specific flashcard from its deck on the server.
+ *
+ * @param {string|number} cardId - The unique ID of the card to delete.
+ * @returns {Promise<any>} A promise that resolves with the server response verification.
+ */
+function deleteCard(cardId) {
+  return fetch(`${baseUrl}/cards/${cardId}`, {
+    method: "DELETE",
+    headers,
+  }).then((res) => processResponse(res));
+}
+/**
+ * Updates an existing flashcard on the server.
+ *
+ * @param {string|number} cardId - The unique ID of the card to update.
+ * @param {Object} cardData - The updated question and answer strings.
+ * @param {string} cardData.question - The updated question text.
+ * @param {string} cardData.answer - The updated answer text.
+ * @returns {Promise<any>} A promise that resolves to the updated card object.
+ */
+function updateCard(cardId, { question, answer }) {
+  return fetch(`${baseUrl}/cards/${cardId}`, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({ question, answer }),
+  }).then((res) => processResponse(res));
+}
+
+export { getDecks, deleteDeck, addDeck, addCard, deleteCard, updateCard };

@@ -54,7 +54,6 @@ const deckTemplateEl = document.querySelector("#deck-template");
 /** @type {HTMLElement} - The grid display container element where cards and decks render. */
 const deckContainerEl = homeSection.querySelector(".gallery__list");
 
-// Clear existing items in the layout grid template area prior to loading.
 deckContainerEl.innerHTML = "";
 
 errorModalDismissBtn.addEventListener("click", () => {

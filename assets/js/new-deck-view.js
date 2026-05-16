@@ -1,4 +1,5 @@
 import { addDeck } from "./api.js";
+import { fetchedDecks } from "./deck-view.js";
 
 /** @type {RegExp} - Regex pattern verifying standard 6-digit hexadecimal format. */
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
@@ -131,7 +132,7 @@ newDeckForm.addEventListener("submit", function (e) {
     color: color,
   })
     .then((newDeck) => {
-      decks.push(newDeck);
+      fetchedDecks.push(newDeck);
       window.location.hash = "deck-view/" + newDeck._id;
     })
     .catch((err) => {

@@ -5,6 +5,7 @@ const colorMap = {
   pink: "#ee92d7",
   purple: "#aa8ef0",
   yellow: "#f5d770",
+  white: "#FFFFFF",
   default: "#64d583",
 };
 
