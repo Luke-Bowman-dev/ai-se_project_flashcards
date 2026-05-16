@@ -1,4 +1,3 @@
-import { decks } from "./decks.js";
 import { addDeck } from "./api.js";
 const HEX_DIGITS = /^[0-9a-fA-F]{6}$/;
 const errorModalEl = document.querySelector("#error-modal");

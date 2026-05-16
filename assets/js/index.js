@@ -1,4 +1,4 @@
-import { decks, getDeckByID } from "./decks.js";
+import { getDeckByID } from "./decks.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colorMap.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView, fetchedDecks } from "./deck-view.js";
@@ -16,6 +16,7 @@ const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const newDeckViewSection = document.querySelector("#new-deck-view");
+const aboutViewSection = document.querySelector("#about-view");
 const pageEl = document.querySelector(".page__main-content");
 let currentDeck = null;
 let currentCardEl = null;
@@ -35,6 +36,7 @@ function showView(section, display) {
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
   newDeckViewSection.style.display = "none";
+  aboutViewSection.style.display = "none";
   section.style.display = display;
 }
 function renderHomeView() {
@@ -116,6 +118,9 @@ function router() {
     showView(newDeckViewSection, "flex");
     pageEl.classList.remove("page__main-content_carousel");
     disableSubmitBtn(newDeckSubmitBtn);
+  } else if (hash === "about") {
+    showView(aboutViewSection, "flex");
+    pageEl.classList.remove("page__main-content_carousel");
   } else {
     renderNotFoundView();
   }

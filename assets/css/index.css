@@ -59,3 +59,7 @@
 @import url(new-deck-view__form__input.css);
 @import url(new-deck-view__form__submit-btn.css);
 @import url(error-modal.css);
+@import url(about-view.css);
+@import url(about-view__title.css);
+@import url(about-view__paragraph.css);
+@import url(about-view__code.css);

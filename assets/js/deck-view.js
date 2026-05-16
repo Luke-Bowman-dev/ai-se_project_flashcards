@@ -1,4 +1,4 @@
-import { decks, getDeckByID } from "./decks.js";
+import { getDeckByID } from "./decks.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colorMap.js";
 import { currentDeck } from "./index.js";
 import { modal } from "./modal.js";
